@@ -1,101 +1,111 @@
-TodoX - MERN Stack Task Management App
+# 🚀 TodoX - MERN Stack Task Management App
 
-todoX là một ứng dụng quản lý công việc (To-do list) hiện đại, được xây dựng trên nền tảng MERN Stack (MongoDB, Express, React, Node.js) và sử dụng thư viện component shadcn/ui để tối ưu hóa trải nghiệm người dùng với giao diện tinh tế.
+**TodoX** là một ứng dụng quản lý công việc (To-do list) hiện đại, được xây dựng trên nền tảng **MERN Stack** (MongoDB, Express, React, Node.js). Ứng dụng tập trung vào sự tối giản, hiệu suất và trải nghiệm người dùng mượt mà nhờ sự kết hợp của **shadcn/ui** và **Tailwind CSS**.
 
-🚀 Tính năng chính
+---
 
-Quản lý công việc (CRUD): Thêm, sửa, xóa và xem danh sách công việc.
+## ✨ Tính năng chính
 
-Trạng thái công việc: Đánh dấu hoàn thành hoặc chưa hoàn thành.
+- **Quản lý công việc (CRUD):** Thêm, sửa, xóa và theo dõi danh sách công việc dễ dàng.
+- **Trạng thái linh hoạt:** Đánh dấu hoàn thành/chưa hoàn thành chỉ với một cú click.
+- **Giao diện hiện đại:** Sử dụng hệ thống component của **Radix UI** và **shadcn/ui**.
+- **Responsive Design:** Tương thích hoàn hảo trên mọi thiết bị (Mobile, Tablet, Desktop).
+- **Dark Mode:** Hỗ trợ chuyển đổi giao diện Sáng/Tối linh hoạt.
 
-Giao diện hiện đại: Sử dụng Radix UI và Tailwind CSS thông qua shadcn/ui.
+---
 
-Responsive Design: Hiển thị mượt mà trên cả điện thoại, máy tính bảng và máy tính để bàn.
+## 🛠 Công nghệ sử dụng
 
-Dark Mode: Hỗ trợ giao diện sáng/tối (tùy chọn).
+### Frontend
 
-🛠 Công nghệ sử dụng
+- **ReactJS (Vite)**
+- **shadcn/ui** (Tailwind CSS + Radix UI)
+- **Lucide React** (Icons)
+- **Axios** (Kết nối API)
 
-Frontend
+### Backend
 
-ReactJS (Vite)
+- **Node.js & Express**
+- **MongoDB & Mongoose**
+- **dotenv** (Quản lý biến môi trường)
 
-shadcn/ui (Tailwind 4 CSS + Radix UI)
+---
 
-Lucide React (Icons)
+## 📂 Cấu trúc dự án
 
-Axios (Kết nối API)
-
-Backend
-
-Node.js & Express
-
-MongoDB & Mongoose (Database)
-
-dotenv (Quản lý biến môi trường)
-
-📂 Cấu trúc dự án
-
+```text
 todoX/
-├── client/ # Mã nguồn ReactJS
-│ ├── src/
-│ │ ├── components/ # shadcn components & custom components
-│ │ ├── lib/ # Tiện ích (utils)
-│ │ └── App.jsx
-├── server/ # Mã nguồn Node.js
-│ ├── models/ # Mongoose Schemas
-│ ├── routes/ # API Routes
-│ └── server.js # Entry point
+├── client/              # Mã nguồn ReactJS
+│   ├── src/
+│   │   ├── components/  # shadcn components & custom components
+│   │   ├── lib/         # Tiện ích (utils)
+│   │   └── App.jsx
+├── server/              # Mã nguồn Node.js
+│   ├── models/          # Mongoose Schemas
+│   ├── routes/          # API Routes
+│   └── server.js        # Entry point
 └── README.md
+```
 
-⚙️ Cài đặt
+---
 
-1. Bản sao mã nguồn (Clone)
+## 🛠 Hướng dẫn cấu hình MongoDB Atlas
 
+Để lấy được chuỗi kết nối `MONGODB_URI`, bạn thực hiện các bước sau:
+
+1. **Tạo tài khoản:** Truy cập [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) và đăng ký tài khoản miễn phí.
+2. **Tạo Cluster:** Chọn gói "Shared" (Free) và nhấn **Create**.
+3. **Cấu hình Quyền truy cập (Security):**
+   - **Database Access:** Tạo một user với username và password (hãy ghi nhớ mật khẩu này).
+   - **Network Access:** Chọn **Add IP Address** và chọn **Allow Access From Anywhere** (0.0.0.0/0) để có thể kết nối từ bất cứ đâu.
+4. **Lấy Connection String:**
+   - Tại tab **Deployment > Database**, nhấn nút **Connect**.
+   - Chọn **Drivers**.
+   - Sao chép chuỗi có dạng: `mongodb+srv://<username>:<password>@cluster0.xxxx.mongodb.net/?retryWrites=true&w=majority`
+5. **Cấu hình file .env:** Thay thế `<password>` bằng mật khẩu bạn đã tạo ở bước 3 và dán toàn bộ chuỗi vào biến `MONGODB_URI` trong file `.env` ở thư mục `/server`.
+
+---
+
+## ⚙️ Quy trình khởi chạy chi tiết
+
+### 1. Bản sao mã nguồn (Clone)
+
+```bash
 git clone [https://github.com/your-username/todoX.git](https://github.com/your-username/todoX.git)
 cd todoX
+```
 
-2. Cấu hình Backend
+### 2. Cấu hình Backend
 
+```bash
 cd server
 npm install
-
-Tạo file .env trong thư mục server/ và thêm các thông số sau:
-
-PORT=5001
-MONGODB_URI=your_mongodb_connection_string
-
-Chạy server:
-
+# Tạo file .env và thêm PORT, MONGODB_URI
 npm run dev
+```
 
-3. Cấu hình Frontend
+### 3. Cấu hình Frontend
 
+```bash
 cd ../client
 npm install
-
-Chạy ứng dụng React:
-
 npm run dev
+```
 
-✨ Các thành phần shadcn/ui đã dùng
+---
 
-Dự án này tích hợp các component mạnh mẽ từ shadcn/ui như:
+### ✨ Thành phần UI (shadcn/ui)
 
-Button
+**Dự án sử dụng các thư viện giao diện hàng đầu để đảm bảo trải nghiệm tốt nhất:**
 
-Input
+- Button, Input, Checkbox: Các điều hướng và nhập liệu cơ bản.
 
-Checkbox
+- Card: Bao bọc nội dung từng công việc.
 
-Card
+- Dialog: Cửa sổ modal hỗ trợ chỉnh sửa thông tin task nhanh chóng.
 
-Dialog (cho việc chỉnh sửa task)
+- Toast: Hiển thị thông báo trạng thái (thành công/lỗi) một cách trực quan.
 
-Toast (thông báo trạng thái)
+---
 
-📝 Giấy phép
-
-Dự án này được cấp phép theo tiêu chuẩn MIT License.
-
-Chúc bạn có trải nghiệm tuyệt vời với todoX!
+### Chúc bạn có trải nghiệm tuyệt vời với todoX!

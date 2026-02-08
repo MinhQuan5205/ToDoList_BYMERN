@@ -2,32 +2,19 @@ import React from "react";
 import TaskEmptyState from "./TaskEmptyState";
 import TaskCard from "./TaskCard";
 
-function TaskList() {
-  let filter = "all";
-  const filteredTasks = [
-    {
-      _id: "1",
-      title: "Học React",
-      status: "active",
-      completedAt: null,
-      createdAt: new Date(),
-    },
-    {
-      _id: "2",
-      title: "Học Js",
-      status: "complete",
-      completedAt: new Date(),
-      createdAt: new Date(),
-    },
-  ];
-
+function TaskList({ filteredTasks, filter, handleTaskChanged }) {
   if (!filteredTasks || filteredTasks.length === 0) {
     return <TaskEmptyState filter={filter} />;
   }
   return (
     <div className="space-y-3">
       {filteredTasks.map((task, index) => (
-        <TaskCard key={task._id ?? index} task={task} index={index} />
+        <TaskCard
+          key={task._id ?? index}
+          task={task}
+          index={index}
+          handleTaskChanged={handleTaskChanged}
+        />
       ))}
     </div>
   );

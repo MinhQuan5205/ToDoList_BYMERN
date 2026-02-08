@@ -7,6 +7,7 @@ import "./index.css";
 function App() {
   return (
     <>
+      <Toaster richColors></Toaster>
       <BrowserRouter>
         <Routes>
           {/* Nơi chứa các danh sách các Route */}

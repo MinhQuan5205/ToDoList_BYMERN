@@ -7,6 +7,9 @@ export default function Header() {
         🎓 TodoX 🎓
       </h1>
 
+      <a href="https://github.com/MinhQuan5205/ToDoList_BYMERN">
+        👉 Link Github 👈
+      </a>
       <p className="text-muted-foreground">
         🤖 Không có việc gì khó, chỉ sợ mình không làm 🤖
       </p>
